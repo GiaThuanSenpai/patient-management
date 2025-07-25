@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.linuxtools.docker.ui.dockerComposeUpLaunchConfigurationType">
+    <stringAttribute key="dockerConnection" value="http://127.0.0.1:2375"/>
+    <stringAttribute key="workingDir" value="/kafka-docker"/>
+    <booleanAttribute key="workingDirWorkspaceRelativeLocation" value="true"/>
+</launchConfiguration>

@@ -1,0 +1,9 @@
+FROM maven:3.9.9-eclipse-temurin-21 AS builder
+
+
+
+FROM openjdk:21
+
+ARG FILE_JAR=target/*.jar
+
+ADD ${FILE_JAR}} api-service.jar

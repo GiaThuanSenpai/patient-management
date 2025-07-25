@@ -1,0 +1,2614 @@
+{
+	"info": {
+		"_postman_id": "0e9bb5f2-fa33-4358-b904-bafdeb4beccb",
+		"name": "job-portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39819235",
+		"_collection_link": "https://kltn55.postman.co/workspace/KLTN-Workspace~e2528e39-8a2e-4cc6-856f-069a41dcf447/collection/39819235-0e9bb5f2-fa33-4358-b904-bafdeb4beccb?action=share&source=collection_link&creator=39819235"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Gia Thuan\",\r\n    \"userType\": {\r\n        \"userTypeId\": 3 // Hoặc ID tương ứng với loại người dùng bạn muốn\r\n    },\r\n    \"email\": \"danggiathuanhl@gmail.com\",\r\n    \"password\": \"giathuan123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "regenerate-otp",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/regenerate-otp?email=danggiathuanhl@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"regenerate-otp"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "danggiathuanhl@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"danggiathuanhl@gmail.com\",\r\n    \"password\": \"Danggiathuan@2003\"\r\n\r\n    // \"email\": \"giathuanhl@gmail.com\",\r\n    // \"password\": \"Danggiathuan@2003\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verifyMail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/forgot-password/verifyMail/giathuanhl@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"forgot-password",
+								"verifyMail",
+								"giathuanhl@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verifyOtp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/forgot-password/verifyOtp/giathuanhl@gmail.com/750601",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"forgot-password",
+								"verifyOtp",
+								"giathuanhl@gmail.com",
+								"750601"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"giathuan123\",\r\n    \"repeatPassword\": \"giathuan123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/forgot-password/changePassword/giathuanhl@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"forgot-password",
+								"changePassword",
+								"giathuanhl@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/verify-account?email=danggiathuanhl@gmail.com&otp=026841",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"verify-account"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "danggiathuanhl@gmail.com"
+								},
+								{
+									"key": "otp",
+									"value": "026841"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginURL",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "signout",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "blockCompany",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "unBlockCompany",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateRole",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Industry",
+			"item": [
+				{
+					"name": "countJobByIndustry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/industry/countJobByIndustry",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"industry",
+								"countJobByIndustry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createIndustry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_name\": \"Ngân hàng\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/job-category/create-category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-category",
+								"create-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchIndustry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteIndustry",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/job-category/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getIndustryById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "countIndustry",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getAllIndustry",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserAccount",
+			"item": [
+				{
+					"name": "getAllUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"user_type_id\": \"0\",\r\n        \"user_name\":\"Admin\",\r\n        \"user_image\": \"https://res-console.cloudinary.com/ddqygrb0g/thumbnails/v1/image/upload/v1721918555/YW5oLW1lbWUtNzdfZmlmZzB0/drilldown\",\r\n        \"gender\": \"Nam\",\r\n        \"date_of_birth\": \"2003/11/21\",\r\n        \"phone\": \"0355626541\",\r\n        \"email\": \"danggiathuanhl@gmail.com\",\r\n        \"password\": \"giathuan123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/create-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"create-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyNzUxMzk1MywiZXhwIjoxNzI3NjAwMzUzLCJlbWFpbCI6ImRhbmdnaWF0aHVhbmhsQGdtYWlsLmNvbSJ9.cGuIjAaPWuMZCRFuRG4o86TY7NcBJlsFPfeDSMu2Xx8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seeker",
+			"item": [
+				{
+					"name": "getAllSeeker",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/seeker/get-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"seeker",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSeeker",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTczMTkzODEwMCwiZXhwIjoxNzMyMDI0NTAwLCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.XHxVPhidEbMFep3t8HiXcv3vngQ-URLuBskS4kW0KTc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"industryId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/seeker/update-seeker",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"seeker",
+								"update-seeker"
+							],
+							"query": [
+								{
+									"key": "User",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchSeekerByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/seeker/search-by-name?userName=Gia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"seeker",
+								"search-by-name"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "Gia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchIndustryByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/seeker/search-by-industry?industryName=điện",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"seeker",
+								"search-by-industry"
+							],
+							"query": [
+								{
+									"key": "industryName",
+									"value": "điện"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSocialLink",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyOTQ4MjAwOSwiZXhwIjoxNzI5NTY4NDA5LCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.mRW-s_q9OtvpO5sR4E9DgofEC5izCaNJwYGwHRFky4k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/seeker/delete-social/GitHub",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"seeker",
+								"delete-social",
+								"GitHub"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfileSeeker",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/seeker/search/dd3f7284-9a66-4dc9-9af7-e15c1a87e28d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"seeker",
+								"search",
+								"dd3f7284-9a66-4dc9-9af7-e15c1a87e28d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "followed-companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "followCompany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTczMjU4OTEyNywiZXhwIjoxNzMyNjc1NTI3LCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.-KvWBmJVASMVhEy9CvYQFIlffKkls5hO1NmxGKIeE6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/seeker/follow/ebfae5ca-f802-4f8d-9bbb-cad539b409b8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"seeker",
+								"follow",
+								"ebfae5ca-f802-4f8d-9bbb-cad539b409b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfileApply",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/seeker/profile-apply?userId=b471c4c1-1ba1-4c13-9019-d0a1cdfed04a&postId=1a2b3c4d-5e6f-7081-92a0-b152d3e4f6c8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"seeker",
+								"profile-apply"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "b471c4c1-1ba1-4c13-9019-d0a1cdfed04a"
+								},
+								{
+									"key": "postId",
+									"value": "1a2b3c4d-5e6f-7081-92a0-b152d3e4f6c8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUnreadNotificationCount",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getNotifications",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getCandidateSkills",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "getAllCompany",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCompany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTc0MzEyOTQwNSwiZXhwIjoxNzQzMjE1ODA1LCJlbWFpbCI6ImRhbmdnaWF0aHVhbmhsKzEwQGdtYWlsLmNvbSJ9.AEObeAQeUcKhnqNRg1adpnAygy7hJAZKqwS7AZWyxao",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"industryIds\": [10]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/company/update-company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company",
+								"update-company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchCompanyByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchCompanyByCityName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyNzUxMjA1MywiZXhwIjoxNzI3NTk4NDUzLCJlbWFpbCI6ImRhbmdnaWF0aHVhbmhsQGdtYWlsLmNvbSJ9.bfDnS7VOmbIMJRPcvKlZY8OmUY9l2bCJW9FXuXVQWA0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/company/searchByCity?cityName=Hà",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company",
+								"searchByCity"
+							],
+							"query": [
+								{
+									"key": "cityName",
+									"value": "Hà"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchCompanyByIndustryName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/company/searchByIndustry?industryName=Công",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company",
+								"searchByIndustry"
+							],
+							"query": [
+								{
+									"key": "industryName",
+									"value": "Công"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfileCompany",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCompany",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/company/get-all-companies?size=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company",
+								"get-all-companies"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "taxcode",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "canRating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTczMDIxMTY5MywiZXhwIjoxNzMwMjk4MDkzLCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.-NixVjhNTkrqX9kzAy-eMzzvST6zFy4WmjxWM-7_Z_U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/company/can-rating/ebfae5ca-f802-4f8d-9bbb-cad539b409b8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"company",
+								"can-rating",
+								"ebfae5ca-f802-4f8d-9bbb-cad539b409b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findCompanyWithCountJob",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCompaniesFitUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profileCompany",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validTaxCode",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "valid-tax",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "valid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-companies",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "listSeekerFollowed",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "validtax-info",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "searchCompany",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JobPost",
+			"item": [
+				{
+					"name": "getAllJob",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateJob",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTc0MzE0NjgwOCwiZXhwIjoxNzQzMjMzMjA4LCJlbWFpbCI6ImRhbmdnaWF0aHVhbmhsKzlAZ21haWwuY29tIn0.ywzKzo4ecP91nXew-VeeGoOYIMc3-4mBgq3bNjFI-Ho",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"industryIds\": [11, 6]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/job-post/update-job/71205161-1786-4dab-abc3-cf3f57af4980",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-post",
+								"update-job",
+								"71205161-1786-4dab-abc3-cf3f57af4980"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTop8Job",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/job-post/get-top8-lastest-job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-post",
+								"get-top8-lastest-job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approvePost",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findJobByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findJobByIndustry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/job-post/search-by-industry?industryId=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-post",
+								"search-by-industry"
+							],
+							"query": [
+								{
+									"key": "industryId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findJobByExp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findJobByCity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/job-post/search-by-city?city=49",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-post",
+								"search-by-city"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "49"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findSalaryMin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/job-post/min-salary/9000000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-post",
+								"min-salary",
+								"9000000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findSalaryMax",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/job-post/max-salary/100000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-post",
+								"max-salary",
+								"100000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getJobById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/job-post/findJob/f57a94ab-2e54-4413-af6c-adcd2ba1134e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-post",
+								"findJob",
+								"f57a94ab-2e54-4413-af6c-adcd2ba1134e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findSalaryBetween",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getJobApprove",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteJob",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/job-post/delete-job/{}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-post",
+								"delete-job",
+								"{}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getJobRecommendation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyOTY3MjUyNywiZXhwIjoxNzI5NzU4OTI3LCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.wA-YBRnbFRJ5_eisM3nqp5icoOFBmnTyEWfuLxAUz1U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/job-post/recommend-jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-post",
+								"recommend-jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-job",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "countJobByType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchJobByFeature",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/job-post/search-job-by-feature?title=bac&minSalary=19000000&typeOfWork",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-post",
+								"search-job-by-feature"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "bac"
+								},
+								{
+									"key": "minSalary",
+									"value": "19000000"
+								},
+								{
+									"key": "typeOfWork",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "max-minSalary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllJobByCompanyId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getJobByCompany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTczMDI3NzU4MiwiZXhwIjoxNzMwMzYzOTgyLCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.l1T3sUaTlArtZkPNDOnaUXpTLa1t1qTe-tRJiX-KWA0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/job-post/search-by-company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-post",
+								"search-by-company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTop5Lastest",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "setExpire",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "adminJob",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "increseViewCount",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "top5last",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "canPostJob",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "findAllJobApprove",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ApplyJob",
+			"item": [
+				{
+					"name": "createApplyJob",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllApplyJob",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateApplyJob",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTczMTUwMzU0NywiZXhwIjoxNzMxNTg5OTQ3LCJlbWFpbCI6ImRhbmdnaWF0aHVhbmhsQGdtYWlsLmNvbSJ9.SjyWiGdp663_UBUcJ9HaIDKOrD7Px2Uiwyu-8YPaREI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pathCV\": \"http://res.cloudinary.com/ddqygrb0g/raw/upload/v1731213251/DangGiaThuan_CV_wmlwrw.pdf\",\r\n    \"description\": \"Kính gửi công ty. Tôi tên là Đặng Gia Thuận, hiện tại tôi đang tìm kiếm một cơ hội mới trong lĩnh vực Lập trình viên và được biết quý công ty đang tuyển dụng vị trí [Tên vị trí IT]. Với niềm đam mê và kinh nghiệm đã tích lũy trong lĩnh vực này, tôi rất mong muốn được gia nhập và cống hiến cho đội ngũ của quý công ty.Tôi đã tốt nghiệp chuyên ngành Công nghệ phần mềm tại DHSPKT.Tôi tin rằng, với những kỹ năng và kiến thức đã tích lũy được, tôi có thể đóng góp tích cực vào sự phát triển của công ty.Tôi rất mong có cơ hội được trao đổi thêm về năng lực và sự phù hợp của mình cho vị trí này. Xin chân thành cảm ơn quý công ty đã dành thời gian xem xét hồ sơ của tôi.\",\r\n    \"email\": \"giathuanhl@gmail.com\",\r\n    \"fullName\": \"Đặng Gia Thuận\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/apply-job/update-apply/1a2b3c4d-3e6f-7081-92a0-b152d3e4f6c0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apply-job",
+								"update-apply",
+								"1a2b3c4d-3e6f-7081-92a0-b152d3e4f6c0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyNzY4NDA3NCwiZXhwIjoxNzI3NzcwNDc0LCJlbWFpbCI6ImRhbmdnaWF0aHVhbmhsQGdtYWlsLmNvbSJ9.aPBBkoGRlaWQXxICISoPPQHvDP2YgepJPooBLx6BDhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"createDate\": \"2024-10-01T00:00:00\",\r\n    \"expireDate\": \"2024-10-30T23:59:59\",\r\n    \"cityId\": 49\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/job-post/create-job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"job-post",
+								"create-job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveApply",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyOTc4NTE3NiwiZXhwIjoxNzI5ODcxNTc2LCJlbWFpbCI6ImRhbmdnaWF0aHVhbmhsQGdtYWlsLmNvbSJ9.Pu7KvhkoZE8Doo2PTsnSkyPQu1-B0hRNBwLB2XF85LA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/apply-job/setApprove/f57a94ab-2e54-4413-af6c-adcd2ba1134e/dd3f7284-9a66-4dc9-9af7-e15c1a87e28d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apply-job",
+								"setApprove",
+								"f57a94ab-2e54-4413-af6c-adcd2ba1134e",
+								"dd3f7284-9a66-4dc9-9af7-e15c1a87e28d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "candidateApply",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkApply",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findApplyJobById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getApplyJobByCompanyId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTczMTgwOTI0NSwiZXhwIjoxNzMxODk1NjQ1LCJlbWFpbCI6ImRhbmdnaWF0aHVhbmhsQGdtYWlsLmNvbSJ9.WoOf960XOWIi8m8jsAUAMnCzyXmn4GT2LjVAFyoo5UA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apply-job/get-apply-job-by-company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apply-job",
+								"get-apply-job-by-company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewApplyJob",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "createReview",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllReview",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/review/get-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"review",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReviewByCompanyId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/review/findReviewByCompanyId/ebfae5ca-f802-4f8d-9bbb-cad539b409b8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"review",
+								"findReviewByCompanyId",
+								"ebfae5ca-f802-4f8d-9bbb-cad539b409b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "countReview",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findReviewByCompanyId",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "detailReview",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "countReviewByStar",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Exp",
+			"item": [
+				{
+					"name": "createExperience",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyNzg3Mzg3NCwiZXhwIjoxNzI3OTYwMjc0LCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.WKjA6dq9HFyicQZaXBua9kSsgOa2Dp_2wZJEbp95R2Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2021-11-21\",\r\n    \"endDate\": \"2022-11-21\",\r\n    \"isCurrentJob\": true,\r\n    \"jobTitle\": \"Thực tập sinh IT\",\r\n    \"companyName\": \"Tin học đại dương\",\r\n    \"description\": \"Thực tập\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/experience/create-experience",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"experience",
+								"create-experience"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteExp",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2021-11-21\",\r\n    \"endDate\": \"2022-11-21\",\r\n    \"isCurrentJob\": true,\r\n    \"jobTitle\": \"Thực tập sinh IT\",\r\n    \"companyName\": \"Tin học đại dương\",\r\n    \"description\": \"Thực tập\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/experience/delete-experience/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"experience",
+								"delete-experience",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateExperience",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchExpByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyOTg2MTM1NCwiZXhwIjoxNzI5OTQ3NzU0LCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.-LX3xcZj5FaO_Tspf9ET1EcJLocnBjvEBkNOLcXf0tM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/experience/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"experience",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getExpByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Edu",
+			"item": [
+				{
+					"name": "createEdu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTczMDc4ODIwMiwiZXhwIjoxNzMwODc0NjAyLCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.ScJ0Tkl10_7DTLRnrvNfiMMJmVnYvF1bb5sSouM_Kh8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"certificateDegreeName\": \"Fundamentals of Digital Image and Video Processing\",\r\n    \"major\": \"Digital Image and Video Processing\",\r\n    \"universityName\": \"Coursera\",\r\n    \"startDate\": \"2023-09-07\",\r\n    \"endDate\": \"2023-12-01\",\r\n    \"gpa\": \"10.0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/education/create-education",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"education",
+								"create-education"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEdu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyOTgyNjU1OCwiZXhwIjoxNzI5OTEyOTU4LCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.cHA4_z5nPhEuYs6h3GNO_KZ45AB1Duyg3WfNMUYPm18",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/education/delete-education/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"education",
+								"delete-education",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchEduByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyOTgyNjU1OCwiZXhwIjoxNzI5OTEyOTU4LCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.cHA4_z5nPhEuYs6h3GNO_KZ45AB1Duyg3WfNMUYPm18",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/education/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"education",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEduByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "City",
+			"item": [
+				{
+					"name": "getAllCity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CV",
+			"item": [
+				{
+					"name": "createCV",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyOTgyMjIzMywiZXhwIjoxNzI5OTA4NjMzLCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.DKLMnqwegY4dQvdvOR5vdKQuWsUTkgNgwZpUbFME0Ws",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pathCV\": \"https://res.cloudinary.com/ddqygrb0g/image/upload/v1729822644/C8._KienTrucRedux_lc83or.pdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cv/create-cv",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cv",
+								"create-cv"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCV",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cv/get-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cv",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCV",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cv/delete-cv/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cv",
+								"delete-cv",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchCV",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTczMTEyNDY0OSwiZXhwIjoxNzMxMjExMDQ5LCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.VDsDmGrsa7QVW1-gm_bYdK4XEKnqh90Eaf_kcJgiwg8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cv/searchCV",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cv",
+								"searchCV"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setIsMain",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTczMTEyNDY0OSwiZXhwIjoxNzMxMjExMDQ5LCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.VDsDmGrsa7QVW1-gm_bYdK4XEKnqh90Eaf_kcJgiwg8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cv/cv-main",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cv",
+								"cv-main"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistic",
+			"item": [
+				{
+					"name": "statisticJob",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getWeeklyAccountCountsWithDateRange",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ImageCompany",
+			"item": [
+				{
+					"name": "deleteImage",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/image-company/delete-image/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image-company",
+								"delete-image",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchImgByCompany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyOTg2MjQ2MywiZXhwIjoxNzI5OTQ4ODYzLCJlbWFpbCI6ImRhbmdnaWF0aHVhbmhsQGdtYWlsLmNvbSJ9.qx9s5xOJ-ZojeDnG1U96Y1gjajEGlp9w9jsd8ifBPWM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/image-company/company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image-company",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createImageCompany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTcyOTg2MjQ2MywiZXhwIjoxNzI5OTQ4ODYzLCJlbWFpbCI6ImRhbmdnaWF0aHVhbmhsQGdtYWlsLmNvbSJ9.qx9s5xOJ-ZojeDnG1U96Y1gjajEGlp9w9jsd8ifBPWM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pathImg\": \"https://res.cloudinary.com/ddqygrb0g/image/upload/v1729862584/hinh-anh-van-phong-cong-ty-rigup-2_mc4wh3.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/image-company/create-image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"image-company",
+								"create-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllImage",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Skills",
+			"item": [
+				{
+					"name": "getSkill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SocialLink",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "createSocialLink",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getSocialLink",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GeneratedCV",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "createGenCv",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateGenCv",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getGenCVById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleteGenCV",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscription",
+			"item": [
+				{
+					"name": "createSub",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTc0MjU0ODk4MCwiZXhwIjoxNzQyNjM1MzgwLCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.hUMJYWTZTKWsdfiA8SlC0A8TJj2huA4R2XYQOaa8PGE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"giathuanhl@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subscription/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscription",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "sendEmail",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "findBySeekerID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTc0MjU2MTI2MCwiZXhwIjoxNzQyNjQ3NjYwLCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.e95rl2xjsS4edcHvwC-WjurZcE2cEy_mRWXCGWCEWpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/subscription/findBySeekerId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subscription",
+								"findBySeekerId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "recommendJob",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "collaborative",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHaWFUaHVhblNlbnBhaSIsImlhdCI6MTc0MTU3NTExMCwiZXhwIjoxNzQxNjYxNTEwLCJlbWFpbCI6ImdpYXRodWFuaGxAZ21haWwuY29tIn0.yXfzvMqdVuM02BDihr1t87cGRfDfT-fMfuM6mX_XxXs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/job-post/recommend-jobs/collaborative",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"job-post",
+						"recommend-jobs",
+						"collaborative"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChatBot",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

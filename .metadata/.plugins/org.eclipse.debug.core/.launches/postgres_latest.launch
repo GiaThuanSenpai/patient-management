@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.linuxtools.docker.ui.runDockerImageLaunchConfigurationType">
+    <booleanAttribute key="allocatePseudoTTY" value="false"/>
+    <booleanAttribute key="autoRemove" value="false"/>
+    <stringAttribute key="command" value=""/>
+    <stringAttribute key="connectionName" value="http://127.0.0.1:2375"/>
+    <stringAttribute key="containerName" value="patient-service-db"/>
+    <stringAttribute key="creationDate" value="2025-06-04 16:41:59"/>
+    <stringAttribute key="entryPoint" value="docker-entrypoint.sh"/>
+    <listAttribute key="envVariables">
+        <listEntry value="POSTGRES_USER=admin_user"/>
+        <listEntry value="POSTGRES_PASSWORD=password"/>
+        <listEntry value="POSTGRES_DB=db"/>
+    </listAttribute>
+    <stringAttribute key="imageId" value="sha256:6efd0df010dc3cb40d5e33e3ef84acecc5e73161bd3df06029ee8698e5e12c60"/>
+    <stringAttribute key="imageName" value="postgres:latest"/>
+    <booleanAttribute key="interactive" value="false"/>
+    <mapAttribute key="labels"/>
+    <listAttribute key="links"/>
+    <stringAttribute key="networkMode" value="internal"/>
+    <booleanAttribute key="privileged" value="false"/>
+    <booleanAttribute key="publishAllPorts" value="true"/>
+    <listAttribute key="publishedPorts">
+        <listEntry value="5432/tcp::5432"/>
+    </listAttribute>
+    <booleanAttribute key="readonly" value="false"/>
+    <listAttribute key="volumes">
+        <listEntry value="/var/lib/postgresql/data:HOST_FILE_SYSTEM:D:\db_volumns\patient-service-db:false:true"/>
+    </listAttribute>
+</launchConfiguration>

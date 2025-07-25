@@ -1,0 +1,48 @@
+
+server:
+  port: 4004
+
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: user-service
+              uri: http://user-service:4005
+              predicates:
+                - Path=/api/users/**
+              filters:
+                - StripPrefix=1
+            - id: patient-service
+              uri: http://patient-service:4000
+              predicates:
+                - Path=/api/patients/**
+              filters:
+                - StripPrefix=1
+                - JwtValidation
+            - id: api-docs-patient
+              uri: http://localhost:4000
+              predicates:
+                - Path=/api-docs/patients
+              filters:
+                - RewritePath=/api-docs/patients,/v3/api-docs
+            - id: api-docs-user
+              uri: http://localhost:4005
+              predicates:
+                - Path=/api-docs/user
+              filters:
+                - RewritePath=/api-docs/user,/v3/api-docs
+      inetutils:
+        default-hostname: localhost
+
+# User service configuration
+user:
+  service:
+    url: http://localhost:4005
+
+# Logging configuration
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty: DEBUG
